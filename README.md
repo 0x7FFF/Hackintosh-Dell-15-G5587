@@ -229,7 +229,7 @@ sudo cp -R ~/Downloads/EFI /media/fusion71au/EFI/
 4. Replace EFI folder with the folder from the archive
 5. Fix (or create the boot option) which points to /EFI/BOOT/BOOTX64.EFI
 ##### Installing Windows
-##### NOTE: Windows Install Utility can't install on a formatted partition with Disk Utility (even after deleting and creating partition by hand)
+##### NOTE: Windows Install Utility can't install Windows on a formatted partition from Disk Utility (even after deleting and creating partition by hand)
 0. Use a bootable USB with Ubuntu from the previous section
 1. Open Apple Disk Utility and create a separate partition for Windows
 2. Boot into Ubuntu USB and install hfsprogs and hfsutils
