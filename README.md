@@ -18,7 +18,8 @@
 If you don't have a Mac it's possible to download an archive with gibMacOS or from the internet
 My archive: https://mega.nz/#!wZsWiaZI!lJwcllKcE8MviuI-ztsOY7K6i0yCoVl9ewERdDGJAK8
 (unpack it where you like)
-Download the EFI folder from this repository and unpack it too
+Download the EFI zip and unpack it too
+Link: https://mega.nz/#!RFVRWKhb!R5e1MYfnywutAOKWGnL5ndNeHhI9FoYKxMoXidHK8d8
 ##### Warning! Following steps are form insanelymac's guide to install High Sierra
 ###### Note: The process is described for 8GB drive. For 16/32/64/etc it's the same because you have 200 MB EFI first partition and 1.9 GB last partition, the difference is in the numbers between partitions, but they are very easy to figure out
 1. First of all you need to cd to the SharedSupport folder withing 'Install macOS Catalina.app' folder
@@ -201,7 +202,7 @@ sudo cp -R ~/Downloads/EFI /media/fusion71au/EFI/
 ```
 ##### Time to boot to OS X Base System and install macOS
 1. Unmount sdb1 & sdb2 via sudo unmount
-2. Reboot into your USB Clover (you can add this option manually in your BIOS finding /boot/EFI/bootx64.EFI file)
+2. Reboot into your USB Clover (you can add this option manually in your BIOS finding /EFI/BOOT/BOOT64.EFI file)
 3. If you see Install macOS option, you've been successful, press Enter and wait until BaseSystem loads
 4. On the Utilites tab open terminal (DiskUtility GUI didn't work for me)
 5. Type ```diskutil list``` and determine your disk to install
@@ -217,10 +218,18 @@ sudo cp -R ~/Downloads/EFI /media/fusion71au/EFI/
 ```
 -bash-3.2# /Volumes/Installer_App/Install\ macOS\ Catalina.app/Contents/Resources/startosinstall --volume /Volumes/MacintoshHD
 ```
-9. After installation reboot into Clover and you'll see two macOS options, pick one that is not Install macOS and start configuring your macOS
+9. After installation reboot into Clover (FROM USB) and you'll see two macOS options, pick one that is not Install macOS and start configuring your macOS
+###### NOTE: MacOS boot option doesn't work you need to move Clover to SSD manually
+##### Moving Clover to the SSD
+0. Make a bootable USB with Ubuntu to use "Try Ubuntu"
+1. Download/Move EFI zip file and unzip (or move folder) to the temporary OS from the USB
+2. ```sudo mkdir /media/User/EFI```
+3. Mount EFI partition (/dev/sdb1) to the /media/User/EFI folder
+4. Replace EFI folder with the folder from the archive
+5. Fix (or create the boot option) which points to /EFI/BOOT/BOOTX64.EFI
 ##### Installing Windows
 ##### NOTE: Windows Install Utility can't install on a formatted partition with Disk Utility (even after deleting and creating partition by hand)
-0. Make a bootable USB with Ubuntu to use "Try Ubuntu"
+0. Use a bootable USB with Ubuntu from the previous section
 1. Open Apple Disk Utility and create a separate partition for Windows
 2. Boot into Ubuntu USB and install hfsprogs and hfsutils
 3. Open GParted and find an empty partition and format it into FAT32 (NTFS didn't work for me)
