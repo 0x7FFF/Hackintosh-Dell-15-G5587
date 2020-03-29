@@ -18,10 +18,11 @@
 If you don't have a Mac it's possible to download an archive with gibMacOS or from the internet
 My archive: https://mega.nz/#!wZsWiaZI!lJwcllKcE8MviuI-ztsOY7K6i0yCoVl9ewERdDGJAK8
 (unpack it where you like)
+
 Download the EFI zip and unpack it too
 Link: https://mega.nz/#!RFVRWKhb!R5e1MYfnywutAOKWGnL5ndNeHhI9FoYKxMoXidHK8d8
-##### Warning! Following steps are form insanelymac's guide to install High Sierra
-###### Note: The process is described for 8GB drive. For 16/32/64/etc it's the same because you have 200 MB EFI first partition and 1.9 GB last partition, the difference is in the numbers between partitions, but they are very easy to figure out
+##### Warning! Following steps are from insanelymac's guide to install High Sierra
+###### Note: The process is described for 8GB drive. For 16/32/64/etc it's the same because you partitioned the 200 MB EFI first and 1.9 GB last, the difference is in the numbers between partitions, but they are very easy to figure out
 1. First of all you need to cd to the SharedSupport folder withing 'Install macOS Catalina.app' folder
 2. Run "7z l BaseSystem.dmg > temp.txt"
 3. Open temp.txt with any text editor and find the following text:
